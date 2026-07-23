@@ -11,6 +11,11 @@ use Native\Mobile\Edge\NativeComponent;
 
 class DriverIntelLocation extends NativeComponent
 {
+    public function navTitle(): string
+    {
+        return 'LOCATION DETAIL';
+    }
+
     /** @var array<int, int> Post ids this driver already marked helpful. */
     public array $voted = [];
 

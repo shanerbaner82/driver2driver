@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Collection;
 use Illuminate\View\View;
 use Native\Mobile\Attributes\Computed;
 use Native\Mobile\Edge\NativeComponent;
+use Native\Mobile\Edge\Transition;
 
 class DriverIntelFeed extends NativeComponent
 {
@@ -18,6 +19,12 @@ class DriverIntelFeed extends NativeComponent
 
     /** @var array<int, int> Post ids this driver already marked helpful. */
     public array $voted = [];
+
+    /** Alert tab: open the report screen as a bottom-sheet-style push. */
+    public function openReport(): void
+    {
+        $this->navigate('/intel/report')->transition(Transition::SlideFromBottom);
+    }
 
     public function setFilter(string $filter): void
     {

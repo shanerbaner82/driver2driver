@@ -12,7 +12,7 @@ uses(RefreshDatabase::class);
 
 it('renders the intel feed with seeded alerts accessibly', function () {
     Native::test(DriverIntelFeed::class)
-        ->assertSee('DRIVER-TO-DRIVER')
+        ->assertSee('All Alerts')
         ->assertSee('Dog Alert')
         ->assertSee('Aggressive dog loose in front yard')
         ->assertSee('By Driver #892')

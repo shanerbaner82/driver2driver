@@ -9,6 +9,11 @@ use Native\Mobile\Edge\NativeComponent;
 
 class DriverIntelReport extends NativeComponent
 {
+    public function navTitle(): string
+    {
+        return 'REPORT';
+    }
+
     /** Selected IntelCategory value; null until the driver picks one. */
     public ?string $category = null;
 

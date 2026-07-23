@@ -8,11 +8,18 @@ use Illuminate\Database\Eloquent\Collection;
 use Illuminate\View\View;
 use Native\Mobile\Attributes\Computed;
 use Native\Mobile\Edge\NativeComponent;
+use Native\Mobile\Edge\Transition;
 
 class DriverIntelMap extends NativeComponent
 {
     /** Active pin filter — an IntelCategory value, or 'all'. */
     public string $filter = 'all';
+
+    /** Alert tab: open the report screen as a bottom-sheet-style push. */
+    public function openReport(): void
+    {
+        $this->navigate('/intel/report')->transition(Transition::SlideFromBottom);
+    }
 
     public function setFilter(string $filter): void
     {
