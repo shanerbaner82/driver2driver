@@ -64,11 +64,18 @@ return [
             'surface-variant' => '#333536',
             'on-surface-variant' => '#E2BFB0',
 
-            // Warm brand outline for borders and dividers.
+            // Warm brand outline for emphasized borders; neutral variant
+            // for card edges and dividers. (Custom tokens — the theme map
+            // is open-ended, any key works in *-theme-* classes.)
             'outline' => '#5A4136',
+            'outline-variant' => '#3E4246',
 
             'destructive' => '#93000A',
             'on-destructive' => '#FFDAD6',
+
+            // Signal Green — "safe to proceed": open status, verified codes.
+            'success' => '#00E475',
+            'on-success' => '#003918',
 
             // Peach tint — headlines, wayfinding, active-state text.
             'accent' => '#FFB693',
@@ -91,9 +98,13 @@ return [
             'on-surface-variant' => '#E2BFB0',
 
             'outline' => '#5A4136',
+            'outline-variant' => '#3E4246',
 
             'destructive' => '#93000A',
             'on-destructive' => '#FFDAD6',
+
+            'success' => '#00E475',
+            'on-success' => '#003918',
 
             'accent' => '#FFB693',
             'on-accent' => '#351000',

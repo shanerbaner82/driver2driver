@@ -13,9 +13,9 @@
                         <text font="body" class="text-[16] text-theme-secondary">{{ $this->location->address }}</text>
                     </column>
                     @if ($this->location->is_open)
-                        <row class="items-center gap-2 px-4 py-3 rounded-lg bg-[#00B059]">
-                            <icon :size="18" class="text-[#003918]" :ios="Ios::CheckmarkCircle" :android="Android::CheckCircle"/>
-                            <text font="mono-bold" class="text-[14] text-[#003918]">OPEN</text>
+                        <row class="items-center gap-2 px-4 py-3 rounded-lg bg-theme-success">
+                            <icon :size="18" class="text-theme-on-success" :ios="Ios::CheckmarkCircle" :android="Android::CheckCircle"/>
+                            <text font="mono-bold" class="text-[14] text-theme-on-success">OPEN</text>
                         </row>
                     @else
                         <row class="items-center gap-2 px-4 py-3 rounded-lg bg-theme-destructive">
@@ -57,14 +57,14 @@
 
                 {{-- Bathroom code --}}
                 @if ($this->location->bathroom_code !== null)
-                    <row class="w-full rounded-lg overflow-hidden border border-theme-surface-variant bg-theme-surface">
-                        <column class="w-2 self-stretch bg-[#00E475]"/>
+                    <row class="w-full rounded-lg overflow-hidden border border-theme-outline-variant bg-theme-surface">
+                        <column class="w-2 self-stretch bg-theme-success"/>
                         <column class="flex-1 p-5 gap-1">
                             <text font="mono-bold" class="text-[14] tracking-wide text-theme-on-surface-variant">BATHROOM CODE</text>
                             <text font="mono-bold" class="text-[38] text-theme-on-surface">{{ $this->location->bathroom_code }}</text>
                             <row class="items-center gap-2">
-                                <icon :size="16" class="text-[#00E475]" :ios="Ios::ClockFill" :android="Android::Schedule"/>
-                                <text font="mono" class="text-[14] text-[#00E475]">Verified {{ $this->location->codeVerifiedAgo() }}</text>
+                                <icon :size="16" class="text-theme-success" :ios="Ios::ClockFill" :android="Android::Schedule"/>
+                                <text font="mono" class="text-[14] text-theme-success">Verified {{ $this->location->codeVerifiedAgo() }}</text>
                             </row>
                         </column>
                         <column class="justify-center pr-4">
@@ -102,7 +102,7 @@
         </scroll-view>
 
         {{-- Pinned actions --}}
-        <row class="w-full items-center gap-3 px-5 pb-4 pt-3 bg-theme-background border-t-2 border-theme-surface-variant">
+        <row class="w-full items-center gap-3 px-5 pb-4 pt-3 bg-theme-background border-t-2 border-theme-outline-variant">
             <pressable ref="photo" a11y-label="Add photo" @navigate.slideFromBottom('/intel/report')>
                 <row class="items-center gap-2 h-14 px-5 rounded-lg bg-theme-surface-variant border border-theme-outline">
                     <icon :size="20" class="text-theme-on-surface" :ios="Ios::CameraFill" :android="Android::Camera"/>

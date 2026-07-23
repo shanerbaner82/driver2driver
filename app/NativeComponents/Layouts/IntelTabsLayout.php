@@ -33,17 +33,17 @@ class IntelTabsLayout extends NativeLayout
     {
         return NavBar::make()
             ->title('DRIVER-TO-DRIVER')
-            ->backgroundColor(config('native-ui.theme.light.background'))
-            ->textColor(config('native-ui.theme.light.accent'))
+            ->backgroundColor(theme('background'))
+            ->textColor(theme('accent'))
             ->back(false);
     }
 
     public function tabBar(NativeComponent $screen): ?TabBar
     {
         return TabBar::make()
-            ->backgroundColor(config('native-ui.theme.light.background'))
-            ->activeColor(config('native-ui.theme.light.primary'))
-            ->textColor(config('native-ui.theme.light.secondary'))
+            ->backgroundColor(theme('background'))
+            ->activeColor(theme('primary'))
+            ->textColor(theme('secondary'))
             ->font('mono')
             ->add(Tab::link('Home', '/', ios: Ios::HouseFill, android: Android::Home))
             ->add(Tab::link('Search', '/intel/map', ios: Ios::Magnifyingglass, android: Android::Search))

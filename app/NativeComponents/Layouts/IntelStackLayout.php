@@ -24,8 +24,8 @@ class IntelStackLayout extends NativeLayout
     {
         return NavBar::make()
             ->title($screen->navTitle())
-            ->backgroundColor(config('native-ui.theme.light.background'))
-            ->textColor(config('native-ui.theme.light.accent'))
+            ->backgroundColor(theme('background'))
+            ->textColor(theme('accent'))
             ->back();
     }
 }

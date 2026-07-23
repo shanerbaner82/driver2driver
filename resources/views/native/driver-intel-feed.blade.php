@@ -10,7 +10,7 @@
                 @foreach ($this->filters() as $key => $label)
                     @php $chipCategory = $key === 'all' ? null : IntelCategory::from($key); @endphp
                     <pressable ref="filter-{{ $key }}" @press="setFilter('{{ $key }}')" a11y-label="Filter alerts: {{ $label }}">
-                        <row class="items-center gap-2 px-4 py-3 rounded-lg border-2 {{ $filter === $key ? 'border-theme-primary bg-theme-surface-variant' : 'border-theme-surface-variant bg-theme-surface' }}">
+                        <row class="items-center gap-2 px-4 py-3 rounded-lg border-2 {{ $filter === $key ? 'border-theme-primary bg-theme-primary/15' : 'border-theme-outline-variant bg-theme-surface' }}">
                             <icon :size="18"
                                   class="{{ $filter === $key ? 'text-theme-accent' : ($chipCategory?->accentClass() ?? 'text-theme-accent') }}"
                                   :ios="$chipCategory?->iosIcon() ?? Ios::ExclamationmarkTriangleFill"
