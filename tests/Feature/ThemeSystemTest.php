@@ -1,6 +1,9 @@
 <?php
 
+use Native\Mobile\Edge\CallbackRegistry;
 use Native\Mobile\Edge\TailwindParser;
+use Nativephp\NativeUi\Elements\Badge;
+use Nativephp\NativeUi\Elements\Button;
 
 /**
  * Guards the High-Vis design system contract: every theme role used by the
@@ -29,6 +32,19 @@ it('feeds chrome colors through the appearance-aware theme() helper', function (
     expect(theme('primary'))->toBe('#FF6B00')
         ->and(theme('success'))->toBe('#00E475')
         ->and(theme('missing-token', '#000000'))->toBe('#000000');
+});
+
+it('exposes the success variant on button and badge elements', function () {
+    $button = Button::make()
+        ->variant('success')
+        ->toArray(new CallbackRegistry);
+
+    $badge = Badge::make()
+        ->variant('success')
+        ->toArray(new CallbackRegistry);
+
+    expect($button['props']['variant'])->toBe('success')
+        ->and($badge['props']['variant'])->toBe('success');
 });
 
 it('registers the design-system font aliases', function () {
