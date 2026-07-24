@@ -4,6 +4,7 @@ namespace App\NativeComponents\Layouts;
 
 use App\Icons\Android;
 use App\Icons\Ios;
+use Native\Mobile\Edge\Layouts\Builders\NavAction;
 use Native\Mobile\Edge\Layouts\Builders\NavBar;
 use Native\Mobile\Edge\Layouts\Builders\Tab;
 use Native\Mobile\Edge\Layouts\Builders\TabBar;
@@ -35,6 +36,12 @@ class IntelTabsLayout extends NativeLayout
             ->title('DRIVER-TO-DRIVER')
             ->backgroundColor(theme('background'))
             ->textColor(theme('accent'))
+            ->action(
+                NavAction::make('style-guide')
+                    ->icon(ios: Ios::Paintpalette, android: Android::Palette)
+                    ->a11yLabel('Open style guide')
+                    ->url('/intel/style-guide')
+            )
             ->back(false);
     }
 

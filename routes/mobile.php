@@ -4,6 +4,7 @@ use App\NativeComponents\DriverIntelFeed;
 use App\NativeComponents\DriverIntelLocation;
 use App\NativeComponents\DriverIntelMap;
 use App\NativeComponents\DriverIntelReport;
+use App\NativeComponents\DriverIntelStyleGuide;
 use App\NativeComponents\Layouts\IntelStackLayout;
 use App\NativeComponents\Layouts\IntelTabsLayout;
 use Illuminate\Support\Facades\Route;
@@ -19,4 +20,7 @@ Route::nativeGroup(IntelTabsLayout::class, function (): void {
 Route::nativeGroup(IntelStackLayout::class, function (): void {
     Route::native('/intel/report', DriverIntelReport::class);
     Route::native('/intel/location/{id}', DriverIntelLocation::class);
+    // Living style guide — exercises every theme token, opacity ramp,
+    // font alias, and button/badge variant for on-device verification.
+    Route::native('/intel/style-guide', DriverIntelStyleGuide::class);
 });

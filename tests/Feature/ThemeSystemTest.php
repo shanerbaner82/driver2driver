@@ -1,7 +1,9 @@
 <?php
 
+use App\NativeComponents\DriverIntelStyleGuide;
 use Native\Mobile\Edge\CallbackRegistry;
 use Native\Mobile\Edge\TailwindParser;
+use Native\Mobile\Testing\Native;
 use Native\Mobile\UI\Elements\Badge;
 use Native\Mobile\UI\Elements\Button;
 
@@ -45,6 +47,31 @@ it('exposes the success variant on button and badge elements', function () {
 
     expect($button['props']['variant'])->toBe('success')
         ->and($badge['props']['variant'])->toBe('success');
+});
+
+it('renders the style guide with every variant on both platforms', function (?string $platform) {
+    $screen = $platform
+        ? Native::test(DriverIntelStyleGuide::class, platform: $platform)
+        : Native::test(DriverIntelStyleGuide::class);
+
+    $screen->assertSee('Theme Tokens')
+        ->assertSee('Signal Green (custom)')
+        ->assertSee('Theme Opacity Ramp')
+        ->assertSee('variant="success"')
+        ->assertSee('Badge Variants')
+        ->assertSee('Font Aliases')
+        ->assertElement('button', fn (array $node): bool => ($node['props']['variant'] ?? null) === 'success')
+        ->assertElement('badge', fn (array $node): bool => ($node['props']['variant'] ?? null) === 'success')
+        ->assertAccessible();
+})->with(['ios' => 'ios', 'android' => 'android', 'default' => [null]]);
+
+it('keeps every style guide button variant interactive', function () {
+    $screen = Native::test(DriverIntelStyleGuide::class);
+
+    foreach (['primary', 'secondary', 'success', 'destructive', 'ghost'] as $i => $variant) {
+        $screen->tap('Demo button: '.$variant)
+            ->assertSet('presses', $i + 1);
+    }
 });
 
 it('registers the design-system font aliases', function () {
