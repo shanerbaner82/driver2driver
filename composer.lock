@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "81dbca6bc53851d504300b34121bc1ec",
+    "content-hash": "03b952a5a4663b15e17bafd07a8b7b8f",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -2473,12 +2473,12 @@
             }
         },
         {
-            "name": "nativephp/native-ui",
+            "name": "nativephp/mobile-ui",
             "version": "dev-add-testing-suite",
             "dist": {
                 "type": "path",
                 "url": "../plugins/nativephp/mobile-ui",
-                "reference": "2633a4dc63c2f40c1b63523549d095a1284fb5de"
+                "reference": "52bf6cce392451db00849602722a98e9655834fc"
             },
             "require": {
                 "nativephp/mobile": "^4.0",
@@ -2488,11 +2488,11 @@
                 "orchestra/testbench": "^10.0",
                 "pestphp/pest": "^3.0"
             },
-            "type": "nativephp-ui-plugin",
+            "type": "nativephp-plugin",
             "extra": {
                 "laravel": {
                     "providers": [
-                        "Nativephp\\NativeUi\\NativeUIServiceProvider"
+                        "Native\\Mobile\\UI\\NativeUIServiceProvider"
                     ]
                 },
                 "nativephp": {
@@ -2501,7 +2501,7 @@
             },
             "autoload": {
                 "psr-4": {
-                    "Nativephp\\NativeUi\\": "src/"
+                    "Native\\Mobile\\UI\\": "src/"
                 }
             },
             "scripts": {
@@ -2514,11 +2514,17 @@
             ],
             "authors": [
                 {
-                    "name": "Your Name",
-                    "email": "you@example.com"
+                    "name": "NativePHP",
+                    "email": "support@nativephp.com"
                 }
             ],
-            "description": "A NativePHP Mobile plugin",
+            "description": "Native SwiftUI and Jetpack Composer components for NativePHP",
+            "funding": [
+                {
+                    "type": "other",
+                    "url": "https://nativephp.com/sponsor"
+                }
+            ],
             "transport-options": {
                 "relative": true
             }
@@ -10675,7 +10681,7 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "nativephp/mobile": 20,
-        "nativephp/native-ui": 20
+        "nativephp/mobile-ui": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,

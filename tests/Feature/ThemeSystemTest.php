@@ -2,8 +2,8 @@
 
 use Native\Mobile\Edge\CallbackRegistry;
 use Native\Mobile\Edge\TailwindParser;
-use Nativephp\NativeUi\Elements\Badge;
-use Nativephp\NativeUi\Elements\Button;
+use Native\Mobile\UI\Elements\Badge;
+use Native\Mobile\UI\Elements\Button;
 
 /**
  * Guards the High-Vis design system contract: every theme role used by the
